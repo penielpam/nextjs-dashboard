@@ -102,21 +102,27 @@ async function seedRevenue() {
 }
 
 export async function GET() {
-  return Response.json({
-    message:
-      'Uncomment this file and remove this line. You can delete this file when you are finished.',
-  });
   try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     await client.sql`BEGIN`;
+
     await seedUsers();
     await seedCustomers();
     await seedInvoices();
     await seedRevenue();
+
     await client.sql`COMMIT`;
 
-    return Response.json({ message: 'Database seeded successfully' });
+    return new Response(
+      JSON.stringify({ message: 'Database seeded successfully' }),
+      { headers: { 'Content-Type': 'application/json' } }
+    );
   } catch (error) {
     await client.sql`ROLLBACK`;
-    return Response.json({ error }, { status: 500 });
+    return new Response(
+      // JSON.stringify({ error: error.message || 'Unknown error' }),
+      // { status: 500, headers: { 'Content-Type': 'application/json' } }
+    );
   }
 }
+
