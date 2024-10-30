@@ -13,19 +13,19 @@ This project is based on the starter template from the [Next.js App Router Cours
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/custom-nextjs-dashboard.git
+   git clone https://github.com/penielpam/nextjs-dashboard
    ```
 2. Navigate into the project directory:
    ```bash
-   cd custom-nextjs-dashboard
+   cd nextjs-dashboard
    ```
 3. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 4. Run the development server:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
