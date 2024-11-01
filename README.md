@@ -1,4 +1,5 @@
-# Customized Next.js Dashboard Application
+# Primeview
+## Customized Next.js Dashboard Application
 
 This project is based on the starter template from the [Next.js App Router Course](https://nextjs.org/learn) but has been extensively customized to create a unique and dynamic dashboard experience. Significant modifications have been made to enhance functionality, user experience, and design.
 
