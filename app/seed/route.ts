@@ -117,7 +117,7 @@ export async function GET() {
       JSON.stringify({ message: 'Database seeded successfully' }),
       { headers: { 'Content-Type': 'application/json' } }
     );
-  } catch (error) {
+  } catch  {
     await client.sql`ROLLBACK`;
     return new Response(
       // JSON.stringify({ error: error.message || 'Unknown error' }),
