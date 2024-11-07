@@ -31,6 +31,13 @@ This project is based on the starter template from the [Next.js App Router Cours
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## User Credentials for Sign-Up
+
+For testing purposes, you can use the following credentials to sign up and log into the application:
+
+- **Email**: `user@nextmail.com`
+- **Password**: `123456`
+
 ## Project Structure
 
 The project follows a modular structure for components, pages, and styles, enabling clean and scalable development.

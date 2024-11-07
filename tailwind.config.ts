@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class', // Enables dark mode with a class (you can use 'media' for auto-detect based on system settings)
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,10 +13,10 @@ const config: Config = {
         '13': 'repeat(13, minmax(0, 1fr))',
       },
       colors: {
-        blue: {
-          400: '#2589FE',
-          500: '#0070F3',
-          600: '#2F6FEB',
+        violet: {
+          400: 'rgb(167 139 250)',
+          500: 'rgb(139 92 246)',
+          600: ' rgb(124 58 237)',
         },
       },
     },
@@ -29,4 +30,5 @@ const config: Config = {
   },
   plugins: [require('@tailwindcss/forms')],
 };
+
 export default config;
