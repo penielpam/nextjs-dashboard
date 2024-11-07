@@ -3,24 +3,19 @@ import Credentials from 'next-auth/providers/credentials';
 import { authConfig } from './auth.config';
 import { z } from 'zod';
 import { sql } from '@vercel/postgres';
-import bcrypt from 'bcrypt';
 import type { User } from '@/app/lib/definitions';
-
+import bcrypt from 'bcrypt';
+ 
 async function getUser(email: string): Promise<User | undefined> {
   try {
     const user = await sql<User>`SELECT * FROM users WHERE email=${email}`;
     return user.rows[0];
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error('Failed to fetch user:', error.message);
-      throw new Error(`Failed to fetch user with email ${email}: ${error.message}`);
-    }
-    console.error('Unknown error:', error);
+  } catch (error) {
+    console.error('Failed to fetch user:', error);
     throw new Error('Failed to fetch user.');
   }
 }
-
-
+ 
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
@@ -29,33 +24,19 @@ export const { auth, signIn, signOut } = NextAuth({
         const parsedCredentials = z
           .object({ email: z.string().email(), password: z.string().min(6) })
           .safeParse(credentials);
-
-        if (parsedCredentials.success) {
+ 
+         if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data;
           const user = await getUser(email);
-          if (!user) {
-            console.log(`User not found: ${email}`);
-            return null;
-          }
-
+          if (!user) return null;
           const passwordsMatch = await bcrypt.compare(password, user.password);
-          if (passwordsMatch) {
-            return user;
-          } else {
-            console.log(`Invalid password for user: ${email}`);
-          }
-        } else {
-          console.log('Invalid credentials format');
+ 
+          if (passwordsMatch) return user;
         }
-
+ 
+        console.log('Invalid credentials');
         return null;
       },
     }),
   ],
-  callbacks: {
-    async session({ session, user }) {
-      session.user = user;
-      return session;
-    },
-  },
 });

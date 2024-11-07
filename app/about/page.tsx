@@ -1,5 +1,3 @@
-import AcmeLogo from '@/app/ui/acme-logo';
-import LoginForm from '@/app/ui/AboutPage';
 import About from '@/app/ui/AboutPage';
  
 export default function AboutPage() {

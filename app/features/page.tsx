@@ -1,4 +1,3 @@
-import AcmeLogo from '@/app/ui/acme-logo';
 import Features from '@/app/ui/FeaturesPage';
  
 export default function FeaturesPage() {

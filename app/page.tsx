@@ -146,21 +146,21 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="bg-white-800 shadow-lg rounded-lg p-6">
               <p className="text-lg text-gray-600">
-                "Primeview has completely transformed how we manage our data. The customizable dashboard and real-time updates are game-changers!"
+                Primeview has completely transformed how we manage our data. The customizable dashboard and real-time updates are game-changers!
               </p>
               <p className="mt-4 font-semibold text-violet-500">John Doe</p>
               <p className="text-sm text-gray-400">CEO, Acme Inc.</p>
             </div>
             <div className="bg-white-800 shadow-lg rounded-lg p-6">
               <p className="text-lg text-gray-600">
-                "An intuitive and beautiful platform. Highly recommend for anyone looking to boost productivity with powerful integrations!"
+                An intuitive and beautiful platform. Highly recommend for anyone looking to boost productivity with powerful integrations!
               </p>
               <p className="mt-4 font-semibold text-violet-500">Jane Smith</p>
               <p className="text-sm text-gray-400">Product Manager, TechCorp</p>
             </div>
             <div className="bg-white-800 shadow-lg rounded-lg p-6">
               <p className="text-lg text-gray-600">
-                "The user experience is seamless, and the platform is incredibly easy to use. It has greatly improved our team's efficiency."
+                The user experience is seamless, and the platform is incredibly easy to use. It has greatly improved the efficiency of our team.
               </p>
               <p className="mt-4 font-semibold text-violet-500">Sam Johnson</p>
               <p className="text-sm text-gray-400">Operations Lead, StartUp Co.</p>
